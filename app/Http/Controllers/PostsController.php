@@ -13,7 +13,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        return view('post');
     }
 
     /**
@@ -82,7 +82,4 @@ class PostsController extends Controller
         //
     }
 
-    public function contact() {
-        return view('contact');
-    }
 }

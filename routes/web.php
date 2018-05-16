@@ -11,6 +11,8 @@
 |
 */
 
+use App\Post;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,4 +21,18 @@ Route::resource('posts', 'PostsController');
 
 Route::get('/contact', function() {
     return view('contact');
+});
+
+/*
+ |--------------------------------------------------------------
+ | Eloquent
+ |--------------------------------------------------------------
+*/
+
+Route::get('/find', function() {
+    $posts = Post::all();
+
+    foreach($posts as $post) {
+        return $post->title;
+    }
 });
